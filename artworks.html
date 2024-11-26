@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artworks Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="artworks-page">
+  <div class="artworks-background-overlay"></div>
+  <div class="artworks-content">
+    <div class="artworks-text-section">
+      <h1>Artworks</h1>
+      <p>Explore the beautiful artworks created by our community.</p>
+    </div>
+    <div class="artworks-gallery-section">
+      <div class="artworks-gallery-container">
+        <!-- 动态加载图片 -->
+        <div class="artworks-gallery-column"></div>
+        <div class="artworks-gallery-column"></div>
+        <div class="artworks-gallery-column"></div>
+      </div>
+    </div>
+  </div>
+  <div id="image-modal" class="image-modal">
+    <span class="close">&times;</span>
+    <img id="modal-image" src="">
+  </div>
+  <a href="visitor.html" class="go-back">Go Back 返回</a> <!-- 添加返回主页的链接 -->
+  <audio id="background-music" src="media/see_you_again.mp3" autoplay loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
