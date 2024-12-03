@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // 为返回按钮添加点击事件监听器
+  document.querySelectorAll('.go-back').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = this.href;
+    });
+  });
+
   // 添加鼠标移动事件监听器以创建波纹效果
   document.addEventListener('mousemove', function(e) {
     const rippleContainer = document.querySelector('.ripple-container');
@@ -60,42 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     modal.style.display = 'none';
     const content = document.querySelector('.artworks-content');
     content.classList.remove('blur-background');
-  });
-
-  // 上传照片功能
-  const uploadForm = document.getElementById('upload-form');
-  uploadForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(uploadForm);
-    fetch('/upload', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        const galleryColumns = document.querySelectorAll('.artworks-gallery-column');
-        const item = document.createElement('div');
-        item.className = 'artworks-gallery-item';
-        const img = document.createElement('img');
-        img.src = data.filePath;
-        item.appendChild(img);
-        galleryColumns[data.index % 3].appendChild(item);
-
-        // 添加点击事件监听器
-        item.addEventListener('click', function() {
-          const modal = document.getElementById('image-modal');
-          const modalImg = document.getElementById('modal-image');
-          const content = document.querySelector('.artworks-content');
-          modal.style.display = 'block';
-          modalImg.src = data.filePath;
-          content.classList.add('blur-background');
-        });
-      } else {
-        alert('Failed to upload photo');
-      }
-    })
-    .catch(error => console.error('Error:', error));
   });
 
   // 留言板功能

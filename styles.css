@@ -157,6 +157,7 @@ body, html {
     color: rgb(0, 0, 0);
     text-decoration: none;
     transition: color 0.3s;
+    z-index: 10; /* 确保按钮处于最前 */
   }
   
   .go-back:hover {
@@ -294,18 +295,30 @@ body.guide {
     font-weight: 100; /* 设置字体粗细 */
     font-style: italic; /* 设置斜体 */
   }
-  
-  .creator-page .creator-options {
+
+  .creator-page .new-section {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 150px;/* Add any necessary styles for new-section */
   }
   
-  .creator-page .creator-options p {
+  .creator-page .new-section p {
     margin: 40px 0;
     font-size: 1.2em;
     gap: 50px;
   }
   
+  .creator-page .contribute {
+    text-align: center;
+    margin-top: 150px;/* Add any necessary styles for new-section */
+    pointer-events: none; /* 不再阻挡鼠标事件 */
+  }
+  
+  .creator-page .contribute p {
+    margin: 40px 0;
+    font-size: 1.2em;
+    pointer-events: auto; /* 恢复子元素的鼠标事件能力 */
+  }
+
   .creator-page .additional-info {
     font-size: 0.8em;
     font-style: italic;
