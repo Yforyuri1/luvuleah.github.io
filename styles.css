@@ -5,7 +5,7 @@ body, html {
     height: 100%;
     overflow-y: auto;
     font-family: 'Courier', monospace;
-    letter-spacing: 0.202em; /* Set letter spacing for all text */
+    letter-spacing: 0.3em; /* Set letter spacing for all text */
   }
 
 .ripple-container {
@@ -59,6 +59,7 @@ body, html {
     margin-top: 200px;
     font-weight: 100; /* 设置字体粗细 */
     font-style: italic; /* 设置斜体 */
+    letter-spacing: wide; /* 设置字母间距 */
   }
 
 .menu {
@@ -150,7 +151,7 @@ body, html {
 
   /* go-back button for all pages */
   .go-back {
-    position: absolute;
+    position: fixed;
     bottom: 40px;
     right: 40px;
     font-size: 0.8em;
@@ -470,6 +471,80 @@ body.guide {
   to {
     transform: scale(1);
   }
+}
+
+/* Styles for the news page */
+.news-page {
+  background: url('media/news-background.jpg') no-repeat center center fixed; /* Replace with your image URL */
+  background-size: cover;
+  color: black; /* Adjust text color for better readability */
+  font-family: 'Courier', sans-serif; /* Change font family */
+  margin: 20px; /* Change page margins */
+  text-align: center ;
+  font-size: larger;
+  font-weight: 100; /* Set font weight */
+}
+
+.news-content {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+  border-radius: 10px;
+  color: #000; /* Set text color to black */
+  font-size: 1.2em; /* Change font size */
+  text-align: center ;
+}
+
+.news-item {
+  margin-bottom: 20px;
+  color: #0d0d65; /* Set text color to black */
+}
+
+.news-item h2 {
+  margin-top: 0;
+  color: #0d0d65; /* Set heading color to dark blue */
+}
+
+/* Scrolling text styles */
+.scrolling-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0); /* 半透明背景 */
+  font-size: 1em;
+}
+
+.scrolling-text span {
+  display: inline-block;
+  padding-left: 100%; /* 确保间隔与句子长度相同 */
+  animation: scroll-left 60s linear infinite; /* 滚动动画 */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Comment Page Styles */
+body.comment-page {
+  display: flex;
+  flex-direction: column; /* 使内容纵向排列 */
+  justify-content: flex-start; /* 从顶部开始排列 */
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.comment-title {
+  font-size: 2em;
+  margin-top: 100px; /* 将标题上移 */
 }
 
   /* Comment Page Styles */
