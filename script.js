@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // 介绍页面的打字效果
 if (document.getElementById("intro-text")) {
   const text = document.getElementById("intro-text").textContent;
-  const typingSpeed = 100; // 毫秒
+  const typingSpeed = 60; // 毫秒
   let index = 0;
 
   const type = () => {
